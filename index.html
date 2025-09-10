@@ -32,53 +32,65 @@ canvas#bg {
   z-index: 0; /* thấp hơn content */
 }
 
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  z-index: 10; /* cao hơn canvas */
-}
-   .content h1 {
-      font-size: 3rem;
+h1 {
+      font-size: 2rem;
       margin-bottom: 30px;
-      font-weight: bold;
-      color: white; /* chữ trắng rõ trên nền tối */
-      text-shadow: 0 0 5px #00f0ff, 0 0 15px #0066ff; /* glow nhẹ */
+      animation: fadeInDown 1.2s ease-in-out;
+      max-width: 700px;
+      line-height: 1.4;
     }
-
-    .content button {
-      padding: 20px 50px;
+    .btn {
+      background: white;
+      color: #764ba2;
+      padding: 15px 40px;
       font-size: 1.5rem;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      background: linear-gradient(45deg, #00c3ff, #0066ff);
-      color: white;
-      box-shadow: 0 0 20px rgba(0, 195, 255, 0.7);
-      transition: all 0.3s ease;
       font-weight: bold;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+      background: #ffd700;
+      color: #333;
+    }
+    /* Hiệu ứng fade-out khi chuyển trang */
+    .fade-out {
+      animation: fadeOut 1s forwards;
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; transform: scale(1.2);}
+    }
+    /* Hiệu ứng chữ */
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-50px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(50px);}
+      to {opacity:1; transform: translateY(0);}
     }
 
-    .content button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 40px rgba(0, 255, 255, 0.9);
-      background: linear-gradient(45deg, #00ffff, #0099ff);
-    }
 
   </style>
 </head>
 <body>
-
   <canvas id="bg"></canvas>
 
-  <div class="content">
-    <h1>Khám Phá Ngay</h1>
-    <button onclick="alert('Bắt đầu chuyến phiêu lưu! 🌍')">Bắt đầu</button>
-  </div>
+<h1>✨ Chào mừng bạn đến với không gian nhỏ của tôi – nơi bắt đầu những hành trình thú vị.</h1>
+  <button class="btn" onclick="redirect()">Khám phá ngay 🚀</button>
 
+  <script>
+    function redirect() {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "https://linktr.ee/Ngan200803";
+      }, 700);
+    }
+  </script>
   <!-- Thêm Three.js từ CDN -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.156.0/build/three.min.js"></script>
   <script>
