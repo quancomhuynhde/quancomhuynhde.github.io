@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Khám phá ngay - Quán Cơm Huynh Đệ</title>
 
-  <!-- SEO + Social (thêm nếu cần) -->
+  <!-- SEO + Social -->
   <meta name="description" content="Quán Cơm Huynh Đệ — Cơm ngon 25K • Ăn no nê • Free thêm cơm + canh + rau. Khám phá ngay!" />
   <meta property="og:title" content="Quán Cơm Huynh Đệ" />
   <meta property="og:description" content="Cơm ngon 25K • Ăn no nê • Free thêm cơm + canh + rau" />
   <meta property="og:image" content="https://quancomhuynhde.github.io/trangchu/img/thumbnail.jpg" />
   <meta property="og:url" content="https://quancomhuynhde.github.io/trangchu/" />
-     <style>
-    /* Reset và full màn hình cho canvas */
+
+  <style>
+    /* Reset + full màn hình */
     html, body {
       margin: 0;
       padding: 0;
@@ -20,25 +21,45 @@
       height: 100%;
       font-family: Arial, sans-serif;
     }
-    canvas#bg {
-      display: block;
-    }
-canvas#bg {
-  position: fixed; /* để canvas nằm dưới */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* thấp hơn content */
-}
 
-h1 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      animation: fadeInDown 1.2s ease-in-out;
-      max-width: 700px;
-      line-height: 1.4;
+    /* Canvas nền */
+    canvas#bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
     }
+
+    /* Nội dung nổi phía trên */
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      font-weight: 800;
+      text-align: center;
+      background: linear-gradient(90deg, #ff7a18, #af002d 40%, #4a00e0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
     .btn {
       background: white;
       color: #764ba2;
@@ -52,11 +73,13 @@ h1 {
       transition: transform 0.3s, background 0.3s, color 0.3s;
       animation: fadeInUp 1.5s ease-in-out;
     }
+
     .btn:hover {
       transform: scale(1.1);
       background: #ffd700;
       color: #333;
     }
+
     /* Hiệu ứng fade-out khi chuyển trang */
     .fade-out {
       animation: fadeOut 1s forwards;
@@ -64,6 +87,7 @@ h1 {
     @keyframes fadeOut {
       to { opacity: 0; transform: scale(1.2);}
     }
+
     /* Hiệu ứng chữ */
     @keyframes fadeInDown {
       from {opacity:0; transform: translateY(-50px);}
@@ -73,15 +97,15 @@ h1 {
       from {opacity:0; transform: translateY(50px);}
       to {opacity:1; transform: translateY(0);}
     }
-
-
   </style>
 </head>
 <body>
   <canvas id="bg"></canvas>
 
-<h1>✨ Chào mừng bạn đến với quán cơm nhỏ của tôi.</h1>
-  <button class="btn" onclick="redirect()">Khám phá ngay 🚀</button>
+  <div class="content">
+    <h1>✨ Chào mừng bạn đến với quán cơm nhỏ của tôi.</h1>
+    <button class="btn" onclick="redirect()">Khám phá ngay 🚀</button>
+  </div>
 
   <script>
     function redirect() {
@@ -91,7 +115,8 @@ h1 {
       }, 700);
     }
   </script>
-  <!-- Thêm Three.js từ CDN -->
+
+  <!-- Thêm Three.js -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.156.0/build/three.min.js"></script>
   <script>
     (function () {
