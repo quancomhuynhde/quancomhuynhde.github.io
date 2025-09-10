@@ -41,40 +41,33 @@ canvas#bg {
   text-align: center;
   z-index: 10; /* cao hơn canvas */
 }
-    /* Overlay nội dung */
-    .content h1 {
-  font-size: 5rem;
-  margin-bottom: 30px;
-  text-shadow: 3px 3px 15px rgba(0,0,0,0.8);
-  background: linear-gradient(90deg, #00f0ff, #0066ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: glowText 2s infinite alternate;
-}
+   .content h1 {
+      font-size: 5rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+      color: white; /* chữ trắng rõ trên nền tối */
+      text-shadow: 0 0 5px #00f0ff, 0 0 15px #0066ff; /* glow nhẹ */
+    }
 
-@keyframes glowText {
-  0% { text-shadow: 0 0 5px #00f0ff, 0 0 10px #0066ff; }
-  100% { text-shadow: 0 0 20px #00f0ff, 0 0 30px #0066ff; }
-}
+    .content button {
+      padding: 20px 50px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(45deg, #00c3ff, #0066ff);
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 195, 255, 0.7);
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
 
-.content button {
-  padding: 20px 50px;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  background: linear-gradient(45deg, #00c3ff, #0066ff);
-  color: white;
-  box-shadow: 0 0 20px rgba(0, 195, 255, 0.7);
-  transition: all 0.3s ease;
-  font-weight: bold;
-}
+    .content button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.9);
+      background: linear-gradient(45deg, #00ffff, #0099ff);
+    }
 
-.content button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 40px rgba(0, 255, 255, 0.9);
-  background: linear-gradient(45deg, #00ffff, #0099ff);
-}
   </style>
 </head>
 <body>
