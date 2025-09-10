@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Khám phá ngay - Quán Cơm Huynh Đệ</title>
 
   <!-- SEO + Social -->
-  <meta name="description" content="Quán Cơm Huynh Đệ — Cơm ngon 25K • Ăn no nê • Free thêm cơm + canh + rau. Khám phá ngay!" />
+  <meta name="description"
+    content="Quán Cơm Huynh Đệ — Cơm ngon 25K • Ăn no nê • Free thêm cơm + canh + rau. Khám phá ngay!" />
   <meta property="og:title" content="Quán Cơm Huynh Đệ" />
   <meta property="og:description" content="Cơm ngon 25K • Ăn no nê • Free thêm cơm + canh + rau" />
   <meta property="og:image" content="https://quancomhuynhde.github.io/trangchu/img/thumbnail.jpg" />
   <meta property="og:url" content="https://quancomhuynhde.github.io/trangchu/" />
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap&subset=vietnamese"
+    rel="stylesheet">
+
   <style>
-    /* Reset + full màn hình */
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       overflow: hidden;
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Nunito', sans-serif;
     }
 
     /* Canvas nền */
@@ -34,28 +39,29 @@
 
     /* Nội dung nổi phía trên */
     .content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
 
-/* nền mờ ngay sau content */
-.content::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4); /* mờ tối nền */
-  filter: blur(8px);
-  z-index: -1;
-  border-radius: 10px;
-}
+    /* nền mờ ngay sau content */
+    .content::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      /* mờ tối nền */
+      filter: blur(8px);
+      z-index: -1;
+      border-radius: 10px;
+    }
 
     h1 {
       font-size: 2.2rem;
@@ -67,7 +73,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
       animation: fadeInDown 1.2s ease-in-out;
     }
 
@@ -80,7 +86,7 @@
       border-radius: 50px;
       border: none;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s, background 0.3s, color 0.3s;
       animation: fadeInUp 1.5s ease-in-out;
     }
@@ -95,21 +101,41 @@
     .fade-out {
       animation: fadeOut 1s forwards;
     }
+
     @keyframes fadeOut {
-      to { opacity: 0; transform: scale(1.2);}
+      to {
+        opacity: 0;
+        transform: scale(1.2);
+      }
     }
 
     /* Hiệu ứng chữ */
     @keyframes fadeInDown {
-      from {opacity:0; transform: translateY(-50px);}
-      to {opacity:1; transform: translateY(0);}
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes fadeInUp {
-      from {opacity:0; transform: translateY(50px);}
-      to {opacity:1; transform: translateY(0);}
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
   <canvas id="bg"></canvas>
 
@@ -167,4 +193,5 @@
     })();
   </script>
 </body>
+
 </html>
