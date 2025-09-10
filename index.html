@@ -25,36 +25,39 @@
     }
 
     /* Overlay nội dung */
-    .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      text-align: center;
-      z-index: 10;
-    }
-
     .content h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    }
+  font-size: 5rem;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.8);
+  background: linear-gradient(90deg, #00f0ff, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 2s infinite alternate;
+}
 
-    .content button {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      background: rgba(0, 150, 255, 0.8);
-      color: white;
-      transition: 0.3s;
-    }
+@keyframes glowText {
+  0% { text-shadow: 0 0 5px #00f0ff, 0 0 10px #0066ff; }
+  100% { text-shadow: 0 0 20px #00f0ff, 0 0 30px #0066ff; }
+}
 
-    .content button:hover {
-      background: rgba(0, 200, 255, 1);
-    }
+.content button {
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #00c3ff, #0066ff);
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 195, 255, 0.7);
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.content button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.9);
+  background: linear-gradient(45deg, #00ffff, #0099ff);
+}
   </style>
 </head>
 <body>
